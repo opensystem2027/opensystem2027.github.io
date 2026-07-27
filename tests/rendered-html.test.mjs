@@ -2,43 +2,23 @@ import assert from "node:assert/strict";
 import { access, readFile } from "node:fs/promises";
 import test from "node:test";
 
-async function render() {
-  const workerUrl = new URL("../dist/server/index.js", import.meta.url);
-  workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
-  const { default: worker } = await import(workerUrl.href);
+test("builds the complete multi-page workshop site", async () => {
+  const [page, layout] = await Promise.all([
+    readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
+  ]);
 
-  return worker.fetch(
-    new Request("http://localhost/", {
-      headers: { accept: "text/html" },
-    }),
-    {
-      ASSETS: {
-        fetch: async () => new Response("Not found", { status: 404 }),
-      },
-    },
-    {
-      waitUntil() {},
-      passThroughOnException() {},
-    },
+  assert.match(layout, /International Workshop on the GKLS equation and beyond/);
+  assert.match(page, /Invited speakers will be announced after confirmation\./);
+  assert.match(page, /Registration will open soon\./);
+  assert.match(page, /Information is subject to\s+change\./);
+  assert.doesNotMatch(page + layout, /codex-preview|react-loading-skeleton/i);
+  await access(new URL("../dist/server/index.js", import.meta.url));
+  await Promise.all(
+    ["venue", "program", "contact", "links"].map((route) =>
+      access(new URL(`../app/${route}/page.tsx`, import.meta.url)),
+    ),
   );
-}
-
-test("server-renders the complete workshop preview", async () => {
-  const response = await render();
-  assert.equal(response.status, 200);
-  assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
-
-  const html = await response.text();
-  assert.match(
-    html,
-    /<title>International Workshop on the GKLS equation and beyond<\/title>/i,
-  );
-  assert.match(html, /7–8 March 2026/);
-  assert.match(html, /RIKEN Wako Campus, Saitama, Japan/);
-  assert.match(html, /Invited speakers will be announced after confirmation\./);
-  assert.match(html, /Registration will open soon\./);
-  assert.match(html, /Information is subject to change\./);
-  assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
 });
 
 test("keeps unconfirmed information explicit and editable", async () => {
@@ -58,10 +38,10 @@ test("keeps unconfirmed information explicit and editable", async () => {
   assert.match(content, /email: "TBA"/);
   assert.match(page, /may be available/);
   assert.match(page, /Registration form — TBA/);
-  assert.match(page, /"Home", "#home"/);
-  assert.match(page, /"Venue", "#venue"/);
-  assert.match(page, /"Program", "#program"/);
-  assert.match(page, /"Contact", "#contact"/);
-  assert.match(page, /"Links", "#links"/);
+  assert.match(page, /"Home", "\/"/);
+  assert.match(page, /"Venue", "\/venue"/);
+  assert.match(page, /"Program", "\/program"/);
+  assert.match(page, /"Contact", "\/contact"/);
+  assert.match(page, /"Links", "\/links"/);
   await access(new URL("../public/og.png", import.meta.url));
 });

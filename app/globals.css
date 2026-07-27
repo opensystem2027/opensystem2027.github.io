@@ -197,6 +197,26 @@ summary {
   min-width: 0;
 }
 
+.page-home .major-section,
+.page-venue .home-section,
+.page-venue .program-section,
+.page-venue .contact-section,
+.page-venue .links-section,
+.page-program .home-section,
+.page-program .venue-section,
+.page-program .contact-section,
+.page-program .links-section,
+.page-contact .home-section,
+.page-contact .venue-section,
+.page-contact .program-section,
+.page-contact .links-section,
+.page-links .home-section,
+.page-links .venue-section,
+.page-links .program-section,
+.page-links .contact-section {
+  display: none;
+}
+
 .draft-notice {
   align-items: center;
   background: var(--warning-bg);
@@ -603,52 +623,30 @@ summary {
 }
 
 .topics-grid {
-  display: grid;
-  gap: 1px;
-  grid-template-columns: repeat(4, 1fr);
-  list-style: none;
+  columns: 2;
+  column-gap: 58px;
+  list-style: disc;
   margin: 0;
-  padding: 1px;
+  padding: 0 0 0 22px;
 }
 
 .topics-grid li {
-  background: var(--mist);
-  min-height: 170px;
-  padding: 23px;
-  position: relative;
-}
-
-.topics-grid li::after {
-  background: var(--blue-500);
-  bottom: 0;
-  content: "";
-  height: 3px;
-  left: 0;
-  position: absolute;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 200ms ease;
-  width: 100%;
-}
-
-.topics-grid li:hover::after {
-  transform: scaleX(1);
+  break-inside: avoid;
+  color: var(--blue-500);
+  padding: 8px 0;
 }
 
 .topics-grid li > span {
-  color: #91a3b2;
-  font-size: 8px;
-  font-weight: 800;
-  letter-spacing: 0.12em;
+  display: none;
 }
 
 .topics-grid h3 {
   color: var(--navy-800);
-  font-family: var(--serif);
-  font-size: 17px;
-  font-weight: 500;
-  line-height: 1.4;
-  margin: 34px 0 0;
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.55;
+  margin: 0;
 }
 
 .related-note {
@@ -1431,7 +1429,7 @@ td {
 
 @media (max-width: 1120px) {
   .topics-grid {
-    grid-template-columns: repeat(2, 1fr);
+    columns: 1;
   }
 
   .rail-map {
@@ -1620,7 +1618,6 @@ td {
   }
 
   .registration-grid,
-  .topics-grid,
   .speaker-grid,
   .organizer-grid,
   .access-options,
@@ -1729,6 +1726,138 @@ td {
   .site-footer > div:last-child {
     align-items: flex-start;
     text-align: left;
+  }
+}
+
+.editor-page,
+.editor-denied {
+  background: var(--mist);
+  min-height: 100vh;
+  padding: 48px max(24px, calc((100vw - 900px) / 2));
+}
+
+.editor-header {
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 34px;
+}
+
+.editor-header p {
+  color: var(--blue-700);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+}
+
+.editor-header h1 {
+  font-family: var(--serif);
+  font-size: 46px;
+  font-weight: 500;
+  margin: 0 0 8px;
+}
+
+.editor-header span,
+.editor-form label {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.editor-header a {
+  border-bottom: 1px solid var(--blue-700);
+  color: var(--blue-700);
+  font-size: 13px;
+  padding-bottom: 4px;
+  text-decoration: none;
+}
+
+.editor-form {
+  display: grid;
+  gap: 18px;
+}
+
+.editor-form section {
+  background: white;
+  border: 1px solid var(--line);
+  padding: 30px;
+}
+
+.editor-form h2 {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0 0 23px;
+}
+
+.editor-form label {
+  display: grid;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.editor-form input,
+.editor-form textarea {
+  background: #fbfdff;
+  border: 1px solid #bfcdd8;
+  border-radius: 0;
+  color: var(--ink);
+  font: inherit;
+  line-height: 1.55;
+  padding: 12px 14px;
+  width: 100%;
+}
+
+.editor-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.editor-save {
+  align-items: center;
+  background: var(--navy-950);
+  bottom: 20px;
+  color: white;
+  display: flex;
+  gap: 20px;
+  padding: 18px;
+  position: sticky;
+}
+
+.editor-save button {
+  background: var(--blue-500);
+  border: 0;
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 750;
+  padding: 13px 22px;
+}
+
+.editor-save span {
+  font-size: 12px;
+}
+
+.editor-denied {
+  display: grid;
+  place-content: center;
+}
+
+@media (max-width: 720px) {
+  .editor-page {
+    padding: 28px 18px;
+  }
+
+  .editor-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .editor-grid {
+    grid-template-columns: 1fr;
   }
 }
 

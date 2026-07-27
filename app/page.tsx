@@ -1,25 +1,27 @@
 import {
-  aboutParagraphs,
   airportRoutes,
-  contact,
-  invitedSpeakers,
-  organizers,
   previewNotice,
   programDays,
   railRoutes,
-  registrationUrl,
-  topics,
   venueLinks,
-  workshop,
 } from "./content";
+import Link from "next/link";
+import { getSiteContent } from "./site-data";
 
 const navigation = [
-  ["01", "Home", "#home"],
-  ["02", "Venue", "#venue"],
-  ["03", "Program", "#program"],
-  ["04", "Contact", "#contact"],
-  ["05", "Links", "#links"],
+  ["01", "Home", "/"],
+  ["02", "Venue", "/venue"],
+  ["03", "Program", "/program"],
+  ["04", "Contact", "/contact"],
+  ["05", "Links", "/links"],
 ];
+
+export type WorkshopPageName =
+  | "home"
+  | "venue"
+  | "program"
+  | "contact"
+  | "links";
 
 function StatusMark({ children }: { children: React.ReactNode }) {
   return <span className="status-mark">{children}</span>;
@@ -48,7 +50,21 @@ function SectionTitle({
   );
 }
 
-export default function Home() {
+export async function WorkshopPage({
+  activePage = "home",
+}: {
+  activePage?: WorkshopPageName;
+}) {
+  const {
+    workshop,
+    aboutParagraphs,
+    topics,
+    invitedSpeakers,
+    organizers,
+    contact,
+    registrationUrl,
+  } = await getSiteContent();
+
   return (
     <>
       <a className="skip-link" href="#main-content">
@@ -56,20 +72,20 @@ export default function Home() {
       </a>
 
       <aside className="site-rail" aria-label="Workshop navigation">
-        <a className="rail-brand" href="#home" aria-label="Workshop home">
+        <Link className="rail-brand" href="/" aria-label="Workshop home">
           <span>NM</span>
           <strong>
             GKLS equation
             <small>&amp; beyond · 2026</small>
           </strong>
-        </a>
+        </Link>
 
         <nav>
           {navigation.map(([index, label, href]) => (
-            <a href={href} key={href}>
+            <Link href={href} key={href}>
               <span>{index}</span>
               {label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -81,23 +97,23 @@ export default function Home() {
       </aside>
 
       <header className="mobile-header">
-        <a href="#home" aria-label="Workshop home">
+        <Link href="/" aria-label="Workshop home">
           <span>NM</span>
           <strong>GKLS equation &amp; beyond</strong>
-        </a>
+        </Link>
         <details>
           <summary>Menu</summary>
           <nav aria-label="Mobile navigation">
             {navigation.map(([, label, href]) => (
-              <a href={href} key={href}>
+              <Link href={href} key={href}>
                 {label}
-              </a>
+              </Link>
             ))}
           </nav>
         </details>
       </header>
 
-      <div className="site-frame">
+      <div className={`site-frame page-${activePage}`}>
         <div className="draft-notice" role="note">
           <span aria-hidden="true" />
           <strong>Pre-publication preview</strong>
@@ -295,10 +311,10 @@ export default function Home() {
                     later. Complete travel information is provided in the Venue
                     section.
                   </p>
-                  <a className="text-link" href="#venue">
-                    View venue and travel information
-                    <span aria-hidden="true">→</span>
-                  </a>
+                <Link className="text-link" href="/venue">
+                  View venue and travel information
+                  <span aria-hidden="true">→</span>
+                </Link>
                 </div>
               </section>
 
@@ -599,4 +615,8 @@ export default function Home() {
       </div>
     </>
   );
+}
+
+export default function Home() {
+  return <WorkshopPage activePage="home" />;
 }

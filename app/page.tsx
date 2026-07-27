@@ -76,7 +76,7 @@ export async function WorkshopPage({
           <span>NM</span>
           <strong>
             GKLS equation
-            <small>&amp; beyond · 2026</small>
+            <small>&amp; beyond · 2027</small>
           </strong>
         </Link>
 
@@ -121,7 +121,8 @@ export async function WorkshopPage({
         </div>
 
         <main id="main-content">
-          <section className="home-section" id="home">
+          {activePage === "home" ? (
+            <section className="home-section" id="home">
             <div className="hero-pattern" aria-hidden="true">
               <span />
               <span />
@@ -259,29 +260,15 @@ export async function WorkshopPage({
                   title="Invited Speakers"
                 />
                 {invitedSpeakers.length > 0 ? (
-                  <div className="speaker-grid">
+                  <ul className="standard-list speaker-list">
                     {invitedSpeakers.map((speaker) => (
-                      <article className="speaker-card" key={speaker.name}>
-                        {speaker.photo ? (
-                          // Speaker photos are added only after confirmation.
-                          // eslint-disable-next-line @next/next/no-img-element
-                          <img src={speaker.photo} alt="" />
-                        ) : (
-                          <div
-                            className="speaker-photo-placeholder"
-                            aria-hidden="true"
-                          />
-                        )}
-                        <div>
-                          <h3>{speaker.name}</h3>
-                          <p>{speaker.affiliation}</p>
-                          {speaker.talkTitle ? (
-                            <h4>{speaker.talkTitle}</h4>
-                          ) : null}
-                        </div>
-                      </article>
+                      <li key={speaker.name}>
+                        <strong>{speaker.name}</strong>
+                        <span>{speaker.affiliation}</span>
+                        {speaker.talkTitle ? <em>{speaker.talkTitle}</em> : null}
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 ) : (
                   <div className="announcement-card">
                     <span aria-hidden="true">+</span>
@@ -311,10 +298,10 @@ export async function WorkshopPage({
                     later. Complete travel information is provided in the Venue
                     section.
                   </p>
-                <Link className="text-link" href="/venue">
-                  View venue and travel information
-                  <span aria-hidden="true">→</span>
-                </Link>
+                  <Link className="text-link" href="/venue">
+                    View venue and travel information
+                    <span aria-hidden="true">→</span>
+                  </Link>
                 </div>
               </section>
 
@@ -324,30 +311,22 @@ export async function WorkshopPage({
                   label="Committee"
                   title="Organising committee"
                 />
-                <div className="organizer-grid">
+                <ul className="standard-list organizer-list">
                   {organizers.map((organizer, index) => (
-                    <article
-                      className="organizer-card"
-                      key={`${organizer.name}-${index}`}
-                    >
-                      <span aria-hidden="true">
-                        {organizer.name === "TBA"
-                          ? "—"
-                          : organizer.name.charAt(0).toUpperCase()}
-                      </span>
-                      <div>
-                        <h3>{organizer.name}</h3>
-                        <p>{organizer.affiliation}</p>
-                        <small>{organizer.role}</small>
-                      </div>
-                    </article>
+                    <li key={`${organizer.name}-${index}`}>
+                      <strong>{organizer.name}</strong>
+                      <span>{organizer.affiliation}</span>
+                      <em>{organizer.role}</em>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </section>
             </div>
-          </section>
+            </section>
+          ) : null}
 
-          <section className="major-section venue-section" id="venue">
+          {activePage === "venue" ? (
+            <section className="major-section venue-section" id="venue">
             <SectionTitle
               index="02"
               label="Venue"
@@ -466,9 +445,11 @@ export async function WorkshopPage({
                 before travel.
               </p>
             </section>
-          </section>
+            </section>
+          ) : null}
 
-          <section className="major-section program-section" id="program">
+          {activePage === "program" ? (
+            <section className="major-section program-section" id="program">
             <SectionTitle
               index="03"
               label="Program"
@@ -525,9 +506,11 @@ export async function WorkshopPage({
                 <p>A detailed program will be announced later.</p>
               </div>
             )}
-          </section>
+            </section>
+          ) : null}
 
-          <section className="major-section contact-section" id="contact">
+          {activePage === "contact" ? (
+            <section className="major-section contact-section" id="contact">
             <SectionTitle
               index="04"
               label="Contact"
@@ -544,9 +527,11 @@ export async function WorkshopPage({
                 <StatusMark>Email address · TBA</StatusMark>
               )}
             </address>
-          </section>
+            </section>
+          ) : null}
 
-          <section className="major-section links-section" id="links">
+          {activePage === "links" ? (
+            <section className="major-section links-section" id="links">
             <SectionTitle
               index="05"
               label="Links"
@@ -596,7 +581,8 @@ export async function WorkshopPage({
                 <StatusMark>TBA</StatusMark>
               </div>
             </div>
-          </section>
+            </section>
+          ) : null}
         </main>
 
         <footer className="site-footer">
@@ -605,7 +591,7 @@ export async function WorkshopPage({
             <span>RIKEN Wako Campus, Japan</span>
           </div>
           <div>
-            <span>© 2026 Workshop Organizers</span>
+            <span>© 2027 Workshop Organizers</span>
             <small>
               This website is currently being updated. Information is subject to
               change.

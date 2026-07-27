@@ -55,7 +55,12 @@ export async function getSiteContent(): Promise<EditableSiteContent> {
     return {
       ...defaultSiteContent,
       ...saved,
-      workshop: { ...workshop, ...saved.workshop },
+      workshop: {
+        ...workshop,
+        ...saved.workshop,
+        date:
+          saved.workshop?.date?.replace("2026", "2027") ?? workshop.date,
+      },
       contact: { ...contact, ...saved.contact },
     };
   } catch {

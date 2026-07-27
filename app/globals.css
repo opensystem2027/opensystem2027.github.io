@@ -197,26 +197,6 @@ summary {
   min-width: 0;
 }
 
-.page-home .major-section,
-.page-venue .home-section,
-.page-venue .program-section,
-.page-venue .contact-section,
-.page-venue .links-section,
-.page-program .home-section,
-.page-program .venue-section,
-.page-program .contact-section,
-.page-program .links-section,
-.page-contact .home-section,
-.page-contact .venue-section,
-.page-contact .program-section,
-.page-contact .links-section,
-.page-links .home-section,
-.page-links .venue-section,
-.page-links .program-section,
-.page-links .contact-section {
-  display: none;
-}
-
 .draft-notice {
   align-items: center;
   background: var(--warning-bg);
@@ -684,41 +664,41 @@ summary {
   margin: 13px 0 0;
 }
 
-.speaker-grid {
-  display: grid;
-  gap: 18px;
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.speaker-card {
-  border: 1px solid var(--line);
-}
-
-.speaker-card img,
-.speaker-photo-placeholder {
-  aspect-ratio: 4 / 3;
-  background: var(--mist);
-  display: block;
-  object-fit: cover;
-  width: 100%;
-}
-
-.speaker-card > div:last-child {
-  padding: 22px;
-}
-
-.speaker-card h3 {
-  font-family: var(--serif);
-  font-size: 21px;
-  font-weight: 500;
+.standard-list {
+  list-style: disc;
   margin: 0;
+  padding-left: 24px;
 }
 
-.speaker-card p,
-.speaker-card h4 {
+.standard-list li {
+  color: var(--blue-500);
+  padding: 8px 0 10px 5px;
+}
+
+.standard-list strong,
+.standard-list span,
+.standard-list em {
+  display: block;
+}
+
+.standard-list strong {
+  color: var(--navy-800);
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.standard-list span {
   color: var(--muted);
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+.standard-list em {
+  color: var(--blue-700);
   font-size: 11px;
-  line-height: 1.5;
+  font-style: normal;
+  margin-top: 4px;
 }
 
 .location-block {
@@ -780,55 +760,6 @@ summary {
 .text-link:hover {
   text-decoration: underline;
   text-underline-offset: 5px;
-}
-
-.organizer-grid {
-  display: grid;
-  gap: 18px;
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.organizer-card {
-  align-items: center;
-  border: 1px solid var(--line);
-  display: flex;
-  gap: 19px;
-  min-height: 135px;
-  padding: 22px;
-}
-
-.organizer-card > span {
-  align-items: center;
-  background: var(--mist);
-  color: var(--blue-700);
-  display: inline-flex;
-  flex: 0 0 auto;
-  font-family: var(--serif);
-  font-size: 21px;
-  height: 60px;
-  justify-content: center;
-  width: 60px;
-}
-
-.organizer-card h3 {
-  font-family: var(--serif);
-  font-size: 20px;
-  font-weight: 500;
-  margin: 0;
-}
-
-.organizer-card p {
-  color: var(--muted);
-  font-size: 11px;
-  margin: 6px 0 8px;
-}
-
-.organizer-card small {
-  color: var(--blue-700);
-  font-size: 8px;
-  font-weight: 800;
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
 }
 
 .major-section {
@@ -1618,8 +1549,6 @@ td {
   }
 
   .registration-grid,
-  .speaker-grid,
-  .organizer-grid,
   .access-options,
   .airport-routes,
   .links-grid {

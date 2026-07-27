@@ -9,6 +9,10 @@ test("builds the complete multi-page workshop site", async () => {
   ]);
 
   assert.match(layout, /International Workshop on the GKLS equation and beyond/);
+  assert.match(page, /activePage === "venue"/);
+  assert.match(page, /activePage === "program"/);
+  assert.match(page, /activePage === "contact"/);
+  assert.match(page, /activePage === "links"/);
   assert.match(page, /Invited speakers will be announced after confirmation\./);
   assert.match(page, /Registration will open soon\./);
   assert.match(page, /Information is subject to\s+change\./);

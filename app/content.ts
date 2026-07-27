@@ -1,0 +1,144 @@
+/*
+ * Workshop content
+ * ----------------
+ * Most wording and all information that will change over time live in this
+ * file. Update the values below; the page layout does not need to be edited.
+ */
+
+export const workshop = {
+  formalName: "International Workshop on the GKLS equation and beyond",
+  heroTitle: "International Workshop on the GKLS equation and beyond",
+  date: "7–8 March 2026",
+  registrationDeadline: "TBA",
+  venueShort: "RIKEN Wako Campus, Saitama, Japan",
+  venueName: "RIKEN Wako Campus",
+  venueAddress: "2-1 Hirosawa, Wako, Saitama 351-0198, Japan",
+  format: "In person",
+  language: "English",
+  expectedParticipants: "Approximately 50",
+  summary:
+    "Bringing together researchers working on non-Markovian quantum dynamics, open quantum systems, quantum information, statistical physics, and related fields.",
+};
+
+export const previewNotice =
+  "Draft preview — confirm the workshop dates and replace all organizer and contact TBA fields before publication.";
+
+export const aboutParagraphs = [
+  "This workshop will bring together researchers studying non-Markovian phenomena in quantum systems and closely related areas. Topics will include fundamental aspects of open quantum dynamics, memory effects, quantum information, statistical mechanics, quantum thermodynamics, and mathematical approaches to dissipative systems.",
+  "Conceived as a small, focused international meeting, the workshop is intended to encourage substantive discussion across neighboring research communities and to create opportunities for interaction among established researchers, early-career researchers, and students.",
+];
+
+export const topics = [
+  "Non-Markovian quantum dynamics",
+  "Open quantum systems",
+  "Memory effects and information backflow",
+  "Quantum information and correlations",
+  "Quantum thermodynamics",
+  "Nonequilibrium statistical physics",
+  "Mathematical foundations of dissipative dynamics",
+  "Experimental and theoretical approaches to quantum dynamics",
+];
+
+export type Speaker = {
+  name: string;
+  affiliation: string;
+  photo?: string;
+  talkTitle?: string;
+};
+
+/*
+ * Add confirmed invited speakers here. Example:
+ * { name: "Full Name", affiliation: "University", photo: "/speakers/name.jpg",
+ *   talkTitle: "Title of the talk" }
+ */
+export const invitedSpeakers: Speaker[] = [];
+
+export type ProgramItem = {
+  time: string;
+  type: "Talk" | "Break" | "Poster session" | "Other";
+  speaker?: string;
+  title: string;
+};
+
+export type ProgramDay = {
+  date: string;
+  label: string;
+  items: ProgramItem[];
+};
+
+/* Add one object per day when the schedule is ready. */
+export const programDays: ProgramDay[] = [];
+
+/*
+ * Add the external registration form URL when registration opens.
+ * Leave empty while registration is closed.
+ */
+export const registrationUrl = "";
+
+export const venueLinks = {
+  googleMaps:
+    "https://www.google.com/maps/search/?api=1&query=RIKEN+Wako+Campus%2C+2-1+Hirosawa%2C+Wako%2C+Saitama",
+  officialAccess: "https://www.riken.jp/en/access/wako-map/",
+  officialBusDirections:
+    "https://www.riken.jp/en/access/wako-map/bus_directions/",
+  officialCampusMap:
+    "https://www.riken.jp/medialibrary/riken/en/access/wako-map/campus_en_p.pdf",
+  visitorEntry: "https://www.riken.jp/en/access/procedure/",
+};
+
+export const railRoutes = [
+  {
+    line: "Tobu Tojo Line",
+    service: "Express / Semi Express",
+    time: "Approx. 12 min",
+  },
+  {
+    line: "Tokyo Metro Fukutoshin Line",
+    service: "Express",
+    time: "Approx. 14 min",
+  },
+  {
+    line: "Tokyo Metro Yurakucho Line",
+    service: "Local",
+    time: "Approx. 19 min",
+  },
+];
+
+export const airportRoutes = [
+  {
+    origin: "Narita Airport",
+    steps: [
+      "Nippori · Keisei Skyliner",
+      "Ikebukuro · JR Yamanote Line",
+      "Wako-shi",
+    ],
+  },
+  {
+    origin: "Haneda Airport",
+    steps: [
+      "Shinagawa · Keikyu Lines",
+      "Ikebukuro · JR Yamanote Line",
+      "Wako-shi",
+    ],
+  },
+];
+
+export type Organizer = {
+  name: string;
+  affiliation: string;
+  role: string;
+};
+
+export const organizers: Organizer[] = [
+  {
+    name: "TBA",
+    affiliation: "TBA",
+    role: "Organizer",
+  },
+];
+
+export const contact = {
+  name: "TBA",
+  affiliation: "TBA",
+  email: "TBA",
+};

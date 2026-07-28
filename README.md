@@ -6,10 +6,14 @@ Source code for the official workshop website.
 - Venue: RIKEN Wako Campus, Saitama, Japan
 - Pages: Home, Venue, Program, Contact, and Links
 - Current site: https://gkls-equation-workshop.riken-quantu-3457.chatgpt.site/
+- GitHub Pages: https://hiroki-nakaba.github.io/opensystem/
 
 ## Editing workshop information
 
 Most frequently changed information is in `app/content.ts`. It contains the dates, description, topics, invited speakers, registration URL, organising committee, and contact details.
+
+After changes are committed to the `main` branch, GitHub Actions automatically
+rebuilds and publishes the public GitHub Pages site.
 
 ## Local development
 

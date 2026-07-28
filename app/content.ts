@@ -6,8 +6,8 @@
  */
 
 export const workshop = {
-  formalName: "International Workshop on the GKLS equation and beyond",
-  heroTitle: "International Workshop on the GKLS equation and beyond",
+  formalName: "International Workshop on the GKLS equation beyond",
+  heroTitle: "International Workshop on the GKLS equation beyond",
   date: "7–8 March 2027",
   registrationDeadline: "TBA",
   venueShort: "RIKEN Wako Campus, Saitama, Japan",
@@ -17,16 +17,11 @@ export const workshop = {
   language: "English",
   expectedParticipants: "Approximately 50",
   summary:
-    "Bringing together researchers working on non-Markovian quantum dynamics, open quantum systems, quantum information, statistical physics, and related fields.",
+    "The Gorini-Kossakowski-Lindblad-Sudarshan equation was proposed about 50 years ago. This workshop aims to give a further development beyond the GKLS equation",
 };
 
 export const previewNotice =
   "Draft preview — confirm the workshop dates and replace all organizer and contact TBA fields before publication.";
-
-export const aboutParagraphs = [
-  "This workshop will bring together researchers studying non-Markovian phenomena in quantum systems and closely related areas. Topics will include fundamental aspects of open quantum dynamics, memory effects, quantum information, statistical mechanics, quantum thermodynamics, and mathematical approaches to dissipative systems.",
-  "Conceived as a small, focused international meeting, the workshop is intended to encourage substantive discussion across neighboring research communities and to create opportunities for interaction among established researchers, early-career researchers, and students.",
-];
 
 export const topics = [
   "Non-Markovian quantum dynamics",
@@ -131,8 +126,13 @@ export type Organizer = {
 
 export const organizers: Organizer[] = [
   {
-    name: "TBA",
-    affiliation: "TBA",
+    name: "Hiroki Nakabayashi",
+    affiliation: "The University of Tokyo and Riken",
+    role: "Chief Organizer",
+  },
+  {
+    name: "Takano Taira",
+    affiliation: "Riken",
     role: "Organizer",
   },
 ];

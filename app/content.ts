@@ -20,13 +20,6 @@ export const workshop = {
     "The Gorini-Kossakowski-Lindblad-Sudarshan equation was proposed about 50 years ago. This workshop aims to give a further development beyond the GKLS equation",
 };
 
-export const previewNotice =
-  "Draft preview — confirm the workshop dates and replace all organizer and contact TBA fields before publication.";
-
-export const aboutParagraphs = [
-  workshop.summary,
-];
-
 export const topics = [
   "Non-Markovian dynamics of open quantum systems",
   "GKLS equation",
@@ -72,6 +65,7 @@ export const programDays: ProgramDay[] = [];
 export const registrationUrl = "";
 
 export const venueLinks = {
+  officialHomepage: "https://www.riken.jp/en/",
   googleMaps:
     "https://www.google.com/maps/search/?api=1&query=RIKEN+Wako+Campus%2C+2-1+Hirosawa%2C+Wako%2C+Saitama",
   officialAccess: "https://www.riken.jp/en/access/wako-map/",
@@ -139,7 +133,7 @@ export const organizers: Organizer[] = [
 ];
 
 export const contact = {
-  name: "TBA",
-  affiliation: "TBA",
-  email: "TBA",
+  name: "Hiroki Nakabayashi",
+  affiliation: "The University of Tokyo and RIKEN",
+  email: "nakaba@iis.u-tokyo.ac.jp",
 };

@@ -786,8 +786,13 @@ summary {
   background: var(--navy-900);
   color: white;
   display: flex;
+  gap: 16px;
   justify-content: space-between;
   padding: 34px;
+}
+
+.venue-lead address {
+  margin-right: auto;
 }
 
 .venue-lead address {
@@ -1089,57 +1094,14 @@ summary {
 
 .program-placeholder {
   border: 1px solid rgba(255, 255, 255, 0.16);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  position: relative;
-}
-
-.program-placeholder > div {
-  padding: 30px;
-}
-
-.program-placeholder > div:first-child {
-  border-right: 1px solid rgba(255, 255, 255, 0.16);
-}
-
-.program-placeholder span {
-  color: #8cb7d6;
-  font-size: 8px;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-}
-
-.program-placeholder i {
-  background: rgba(255, 255, 255, 0.1);
-  display: block;
-  height: 1px;
-  margin-top: 29px;
-  position: relative;
-}
-
-.program-placeholder i::before {
-  background: var(--blue-500);
-  border-radius: 50%;
-  content: "";
-  height: 5px;
-  left: 0;
-  position: absolute;
-  top: -2px;
-  width: 5px;
 }
 
 .program-placeholder p {
-  background: white;
-  bottom: -1px;
-  color: var(--navy-900);
+  color: white;
   font-family: var(--serif);
   font-size: 18px;
-  left: 50%;
   margin: 0;
-  padding: 19px 27px;
-  position: absolute;
-  transform: translate(-50%, 50%);
-  white-space: nowrap;
+  padding: 30px;
 }
 
 .program-days {
@@ -1350,6 +1312,17 @@ td {
 
 .site-footer span {
   font-size: 10px;
+}
+
+.site-footer a {
+  color: #b9dcf3;
+  font-size: 11px;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .site-footer small {
@@ -1619,23 +1592,12 @@ td {
   }
 
   .program-placeholder {
-    grid-template-columns: 1fr;
-    padding-bottom: 55px;
-  }
-
-  .program-placeholder > div:first-child {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
-    border-right: 0;
+    padding-bottom: 0;
   }
 
   .program-placeholder p {
-    bottom: 0;
     font-size: 15px;
-    left: 18px;
-    right: 18px;
     text-align: center;
-    transform: translateY(50%);
-    white-space: normal;
   }
 
   .contact-section {

@@ -1,6 +1,5 @@
 import { env } from "cloudflare:workers";
 import {
-  aboutParagraphs,
   contact,
   invitedSpeakers,
   organizers,
@@ -11,7 +10,6 @@ import {
 
 export type EditableSiteContent = {
   workshop: typeof workshop;
-  aboutParagraphs: string[];
   topics: string[];
   invitedSpeakers: typeof invitedSpeakers;
   organizers: typeof organizers;
@@ -21,7 +19,6 @@ export type EditableSiteContent = {
 
 export const defaultSiteContent: EditableSiteContent = {
   workshop,
-  aboutParagraphs,
   topics,
   invitedSpeakers,
   organizers,

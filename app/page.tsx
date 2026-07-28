@@ -1,26 +1,24 @@
 import {
   airportRoutes,
-  previewNotice,
   programDays,
   railRoutes,
   venueLinks,
 } from "./content";
 import Link from "next/link";
+import MobileMenu from "./MobileMenu";
 import { getSiteContent } from "./site-data";
 
 const navigation = [
   ["01", "Home", "/"],
   ["02", "Venue", "/venue"],
   ["03", "Program", "/program"],
-  ["04", "Contact", "/contact"],
-  ["05", "Links", "/links"],
-];
+  ["04", "Links", "/links"],
+] as const;
 
 export type WorkshopPageName =
   | "home"
   | "venue"
   | "program"
-  | "contact"
   | "links";
 
 function StatusMark({ children }: { children: React.ReactNode }) {
@@ -57,7 +55,6 @@ export async function WorkshopPage({
 }) {
   const {
     workshop,
-    aboutParagraphs,
     topics,
     invitedSpeakers,
     organizers,
@@ -101,25 +98,10 @@ export async function WorkshopPage({
           <span>NM</span>
           <strong>GKLS equation &amp; beyond</strong>
         </Link>
-        <details>
-          <summary>Menu</summary>
-          <nav aria-label="Mobile navigation">
-            {navigation.map(([, label, href]) => (
-              <Link href={href} key={href}>
-                {label}
-              </Link>
-            ))}
-          </nav>
-        </details>
+        <MobileMenu items={navigation} />
       </header>
 
       <div className={`site-frame page-${activePage}`}>
-        <div className="draft-notice" role="note">
-          <span aria-hidden="true" />
-          <strong>Pre-publication preview</strong>
-          <p>{previewNotice}</p>
-        </div>
-
         <main id="main-content">
           {activePage === "home" ? (
             <section className="home-section" id="home">
@@ -164,25 +146,12 @@ export async function WorkshopPage({
             </div>
 
             <div className="home-content">
-              <section className="home-block overview-block" id="home-overview">
-                <SectionTitle
-                  index="01.1"
-                  label="About"
-                  title="A focused forum for open quantum dynamics"
-                />
-                <div className="about-copy">
-                  {aboutParagraphs.map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
-                  ))}
-                </div>
-              </section>
-
               <section
                 className="home-block registration-block"
                 id="home-registration"
               >
                 <SectionTitle
-                  index="01.2"
+                  index="01.1"
                   label="Participation"
                   title="Registration & dates"
                 />
@@ -233,15 +202,10 @@ export async function WorkshopPage({
                     </div>
                   </dl>
                 </div>
-                <p className="support-note">
-                  Limited travel support for students and early-career
-                  researchers may be available. Details and eligibility criteria
-                  will be announced later.
-                </p>
               </section>
 
               <section className="home-block topics-block">
-                <SectionTitle index="01.3" label="Scope" title="Topics" />
+                <SectionTitle index="01.2" label="Scope" title="Topics" />
                 <ol className="topics-grid">
                   {topics.map((topic, index) => (
                     <li key={topic}>
@@ -255,36 +219,30 @@ export async function WorkshopPage({
 
               <section className="home-block speakers-block">
                 <SectionTitle
-                  index="01.4"
+                  index="01.3"
                   label="Participants"
                   title="Invited Speakers"
                 />
-                {invitedSpeakers.length > 0 ? (
-                  <ul className="standard-list speaker-list">
-                    {invitedSpeakers.map((speaker) => (
+                <ul className="standard-list speaker-list">
+                  {invitedSpeakers.length > 0 ? (
+                    invitedSpeakers.map((speaker) => (
                       <li key={speaker.name}>
                         <strong>{speaker.name}</strong>
                         <span>{speaker.affiliation}</span>
                         {speaker.talkTitle ? <em>{speaker.talkTitle}</em> : null}
                       </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <div className="announcement-card">
-                    <span aria-hidden="true">+</span>
-                    <div>
-                      <StatusMark>Announcement pending</StatusMark>
-                      <p>
-                        Invited speakers will be announced after confirmation.
-                      </p>
-                    </div>
-                  </div>
-                )}
+                    ))
+                  ) : (
+                    <li>
+                      <strong>To be announced</strong>
+                    </li>
+                  )}
+                </ul>
               </section>
 
               <section className="home-block location-block">
                 <SectionTitle
-                  index="01.5"
+                  index="01.4"
                   label="Location"
                   title="RIKEN Wako Campus"
                 />
@@ -307,7 +265,7 @@ export async function WorkshopPage({
 
               <section className="home-block organizers-block">
                 <SectionTitle
-                  index="01.6"
+                  index="01.5"
                   label="Committee"
                   title="Organising committee"
                 />
@@ -347,6 +305,15 @@ export async function WorkshopPage({
                 target="_blank"
               >
                 Open in Google Maps
+                <span aria-hidden="true">↗</span>
+              </a>
+              <a
+                className="button button-outline"
+                href={venueLinks.officialHomepage}
+                rel="noreferrer"
+                target="_blank"
+              >
+                RIKEN official website
                 <span aria-hidden="true">↗</span>
               </a>
             </div>
@@ -491,49 +458,16 @@ export async function WorkshopPage({
               </div>
             ) : (
               <div className="program-placeholder">
-                <div>
-                  <span>DAY 01</span>
-                  <i />
-                  <i />
-                  <i />
-                </div>
-                <div>
-                  <span>DAY 02</span>
-                  <i />
-                  <i />
-                  <i />
-                </div>
                 <p>A detailed program will be announced later.</p>
               </div>
             )}
             </section>
           ) : null}
 
-          {activePage === "contact" ? (
-            <section className="major-section contact-section" id="contact">
-            <SectionTitle
-              index="04"
-              label="Contact"
-              title="Workshop inquiries"
-              description="For questions about the workshop, registration, or accessibility, please contact the organising committee."
-            />
-            <address className="contact-card">
-              <p className="mini-label">Primary contact</p>
-              <strong>{contact.name}</strong>
-              <span>{contact.affiliation}</span>
-              {contact.email !== "TBA" ? (
-                <a href={`mailto:${contact.email}`}>{contact.email}</a>
-              ) : (
-                <StatusMark>Email address · TBA</StatusMark>
-              )}
-            </address>
-            </section>
-          ) : null}
-
           {activePage === "links" ? (
             <section className="major-section links-section" id="links">
             <SectionTitle
-              index="05"
+              index="04"
               label="Links"
               title="Useful information"
               description="Official resources for planning your visit to RIKEN Wako Campus."
@@ -589,6 +523,7 @@ export async function WorkshopPage({
           <div>
             <strong>{workshop.formalName}</strong>
             <span>RIKEN Wako Campus, Japan</span>
+            <a href={`mailto:${contact.email}`}>{contact.email}</a>
           </div>
           <div>
             <span>© 2027 Workshop Organizers</span>

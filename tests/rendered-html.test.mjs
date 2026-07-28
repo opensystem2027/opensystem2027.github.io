@@ -11,15 +11,15 @@ test("builds the complete multi-page workshop site", async () => {
   assert.match(layout, /International Workshop on the GKLS equation and beyond/);
   assert.match(page, /activePage === "venue"/);
   assert.match(page, /activePage === "program"/);
-  assert.match(page, /activePage === "contact"/);
   assert.match(page, /activePage === "links"/);
-  assert.match(page, /Invited speakers will be announced after confirmation\./);
+  assert.match(page, /To be announced/);
   assert.match(page, /Registration will open soon\./);
   assert.match(page, /Information is subject to\s+change\./);
+  assert.doesNotMatch(page, /Pre-publication preview|DAY 01|DAY 02/);
   assert.doesNotMatch(page + layout, /codex-preview|react-loading-skeleton/i);
   await access(new URL("../dist/server/index.js", import.meta.url));
   await Promise.all(
-    ["venue", "program", "contact", "links"].map((route) =>
+    ["venue", "program", "links"].map((route) =>
       access(new URL(`../app/${route}/page.tsx`, import.meta.url)),
     ),
   );
@@ -38,14 +38,12 @@ test("keeps unconfirmed information explicit and editable", async () => {
   assert.match(content, /export const venueLinks = \{/);
   assert.match(content, /google\.com\/maps\/search/);
   assert.match(content, /riken\.jp\/en\/access\/wako-map/);
-  assert.match(content, /name: "TBA"/);
-  assert.match(content, /email: "TBA"/);
-  assert.match(page, /may be available/);
+  assert.match(content, /email: "nakaba@iis\.u-tokyo\.ac\.jp"/);
+  assert.doesNotMatch(page, /may be available/);
   assert.match(page, /Registration form — TBA/);
   assert.match(page, /"Home", "\/"/);
   assert.match(page, /"Venue", "\/venue"/);
   assert.match(page, /"Program", "\/program"/);
-  assert.match(page, /"Contact", "\/contact"/);
   assert.match(page, /"Links", "\/links"/);
   await access(new URL("../public/og.png", import.meta.url));
 });

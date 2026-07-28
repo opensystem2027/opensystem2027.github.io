@@ -67,21 +67,6 @@ export default function Editor({ initialContent }: EditorProps) {
               onChange={(event) => setWorkshop("summary", event.target.value)}
             />
           </label>
-          <label>
-            Description paragraphs (one paragraph per line)
-            <textarea
-              rows={7}
-              value={content.aboutParagraphs.join("\n")}
-              onChange={(event) =>
-                setContent({
-                  ...content,
-                  aboutParagraphs: event.target.value
-                    .split("\n")
-                    .filter(Boolean),
-                })
-              }
-            />
-          </label>
         </section>
 
         <section>

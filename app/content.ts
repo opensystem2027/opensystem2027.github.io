@@ -23,6 +23,10 @@ export const workshop = {
 export const previewNotice =
   "Draft preview — confirm the workshop dates and replace all organizer and contact TBA fields before publication.";
 
+export const aboutParagraphs = [
+  workshop.summary,
+];
+
 export const topics = [
   "Non-Markovian quantum dynamics",
   "Open quantum systems",

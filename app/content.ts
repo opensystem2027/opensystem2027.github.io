@@ -28,14 +28,11 @@ export const aboutParagraphs = [
 ];
 
 export const topics = [
-  "Non-Markovian quantum dynamics",
-  "Open quantum systems",
-  "Memory effects and information backflow",
+  "Non-Markovian dynamics of open quantum systems",
+  "GKLS equation",
   "Quantum information and correlations",
   "Quantum thermodynamics",
-  "Nonequilibrium statistical physics",
-  "Mathematical foundations of dissipative dynamics",
-  "Experimental and theoretical approaches to quantum dynamics",
+  "Experimental approaches to open quantum systems",
 ];
 
 export type Speaker = {

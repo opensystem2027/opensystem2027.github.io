@@ -26,6 +26,13 @@ export const defaultSiteContent: EditableSiteContent = {
   registrationUrl,
 };
 
+function markDateAsTentative(date: string) {
+  const dateIn2027 = date.replace("2026", "2027");
+  return /tentative/i.test(dateIn2027)
+    ? dateIn2027
+    : `${dateIn2027} (tentative)`;
+}
+
 async function ensureContentTable() {
   await env.DB.prepare(
     `CREATE TABLE IF NOT EXISTS site_content (
@@ -55,8 +62,7 @@ export async function getSiteContent(): Promise<EditableSiteContent> {
       workshop: {
         ...workshop,
         ...saved.workshop,
-        date:
-          saved.workshop?.date?.replace("2026", "2027") ?? workshop.date,
+        date: markDateAsTentative(saved.workshop?.date ?? workshop.date),
       },
       contact: { ...contact, ...saved.contact },
     };

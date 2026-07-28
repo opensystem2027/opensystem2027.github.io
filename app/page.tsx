@@ -70,11 +70,7 @@ export async function WorkshopPage({
 
       <aside className="site-rail" aria-label="Workshop navigation">
         <Link className="rail-brand" href="/" aria-label="Workshop home">
-          <span>NM</span>
-          <strong>
-            GKLS equation
-            <small>&amp; beyond · 2027</small>
-          </strong>
+          <strong>International Workshop on the GKLS equation beyond</strong>
         </Link>
 
         <nav>
@@ -95,8 +91,7 @@ export async function WorkshopPage({
 
       <header className="mobile-header">
         <Link href="/" aria-label="Workshop home">
-          <span>NM</span>
-          <strong>GKLS equation &amp; beyond</strong>
+          <strong>International Workshop on the GKLS equation beyond</strong>
         </Link>
         <MobileMenu items={navigation} />
       </header>

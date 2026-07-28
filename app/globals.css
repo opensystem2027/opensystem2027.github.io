@@ -110,22 +110,10 @@ summary {
 }
 
 .rail-brand strong {
-  display: flex;
-  flex-direction: column;
   font-family: var(--serif);
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 500;
-  line-height: 1.1;
-}
-
-.rail-brand small {
-  color: #86a3bb;
-  font-family: var(--sans);
-  font-size: 8px;
-  font-weight: 750;
-  letter-spacing: 0.12em;
-  margin-top: 5px;
-  text-transform: uppercase;
+  line-height: 1.3;
 }
 
 .site-rail nav {
@@ -1380,8 +1368,10 @@ td {
 
   .mobile-header > a strong {
     font-family: var(--serif);
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 500;
+    line-height: 1.2;
+    max-width: min(68vw, 360px);
   }
 
   .mobile-header details {

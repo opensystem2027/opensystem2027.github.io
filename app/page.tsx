@@ -484,13 +484,16 @@ export async function WorkshopPage({
         </main>
 
         <footer className="site-footer">
-          <div>
+          <div className="footer-identity">
             <strong>{workshop.formalName}</strong>
             <span>RIKEN Wako Campus, Japan</span>
-            <a href={`mailto:${contact.email}`}>{contact.email}</a>
           </div>
-          <div>
-            <span>© 2027 Workshop Organizers</span>
+          <address className="footer-contact">
+            <span>Contact</span>
+            <strong>{contact.name}</strong>
+            <a href={`mailto:${contact.email}`}>{contact.email}</a>
+          </address>
+          <div className="footer-note">
             <small>
               This website is currently being updated. Information is subject to
               change.

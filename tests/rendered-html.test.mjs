@@ -15,7 +15,10 @@ test("builds the complete multi-page workshop site", async () => {
   assert.match(page, /To be announced/);
   assert.match(page, /Registration will open soon\./);
   assert.match(page, /title="Links"/);
+  assert.match(page, />Contact</);
+  assert.match(page, /\{contact\.name\}/);
   assert.match(page, /Information is subject to\s+change\./);
+  assert.doesNotMatch(page, /© 2027 Workshop Organizers/);
   assert.doesNotMatch(
     page,
     /Pre-publication preview|DAY 01|DAY 02|Useful information|Participation|Scope/,

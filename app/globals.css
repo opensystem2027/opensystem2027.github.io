@@ -157,13 +157,13 @@ summary {
 .rail-meta p {
   color: #d0dee9;
   font-family: var(--serif);
-  font-size: 15px;
+  font-size: 17px;
   margin: 0 0 6px;
 }
 
 .rail-meta span {
   color: #728fa8;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 750;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -271,7 +271,7 @@ summary {
 .mini-label,
 .section-title > p {
   color: var(--blue-700);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 800;
   letter-spacing: 0.17em;
   text-transform: uppercase;
@@ -312,7 +312,7 @@ summary {
   align-items: center;
   border: 1px solid transparent;
   display: inline-flex;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 760;
   gap: 22px;
   justify-content: center;
@@ -399,7 +399,7 @@ summary {
 
 .hero-facts span {
   color: #8bb0cd;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -407,7 +407,7 @@ summary {
 
 .hero-facts strong {
   font-family: var(--serif);
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 500;
   line-height: 1.35;
 }
@@ -448,7 +448,7 @@ summary {
 
 .section-title > div {
   color: var(--muted);
-  font-size: 14px;
+  font-size: 16px;
   grid-column: 1;
   line-height: 1.7;
   max-width: 650px;
@@ -516,7 +516,7 @@ summary {
 
 .registration-card small {
   color: var(--muted);
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.55;
   margin-top: auto;
   padding-top: 28px;
@@ -540,13 +540,14 @@ summary {
 
 .dates-card dt {
   color: var(--muted);
-  font-size: 13px;
+  font-size: 16px;
+  font-weight: 650;
 }
 
 .dates-card dd {
   color: var(--navy-900);
   font-family: var(--serif);
-  font-size: 17px;
+  font-size: 20px;
   margin: 0;
   text-align: right;
 }
@@ -557,7 +558,7 @@ summary {
   color: var(--blue-700);
   display: inline-flex;
   font-family: var(--sans);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 800;
   letter-spacing: 0.12em;
   padding: 7px 9px;
@@ -567,7 +568,7 @@ summary {
 .support-note {
   border-left: 3px solid var(--blue-500);
   color: var(--muted);
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.7;
   margin: 22px 0 0;
   padding: 7px 0 7px 18px;
@@ -602,7 +603,7 @@ summary {
 
 .related-note {
   color: var(--blue-700);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 750;
   margin: 23px 0 0;
 }
@@ -661,13 +662,13 @@ summary {
 
 .standard-list span {
   color: var(--muted);
-  font-size: 14px;
+  font-size: 16px;
   margin-top: 3px;
 }
 
 .standard-list em {
   color: var(--blue-700);
-  font-size: 13px;
+  font-size: 15px;
   font-style: normal;
   margin-top: 4px;
 }
@@ -704,7 +705,7 @@ summary {
 .location-summary address span,
 .location-summary p {
   color: #adc0d0;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.7;
   margin-top: 8px;
 }
@@ -718,7 +719,7 @@ summary {
   align-items: center;
   color: var(--blue-700);
   display: inline-flex;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 760;
   gap: 13px;
   text-decoration: none;
@@ -784,7 +785,7 @@ summary {
 
 .venue-lead address span {
   color: #a9bfd1;
-  font-size: 13px;
+  font-size: 15px;
   margin-top: 8px;
 }
 
@@ -852,7 +853,7 @@ summary {
 
 .station span {
   color: #91adc4;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -913,13 +914,13 @@ summary {
 
 .rail-line strong {
   color: var(--navy-800);
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .rail-line p span,
 .rail-line small {
   color: var(--muted);
-  font-size: 12px;
+  font-size: 14px;
   margin-top: 3px;
 }
 
@@ -931,7 +932,7 @@ summary {
 .route-reminder {
   background: var(--blue-100);
   color: var(--navy-800);
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.6;
   margin: 25px 0 0;
   padding: 14px 17px;
@@ -952,7 +953,7 @@ summary {
 
 .access-options article > span {
   color: #8fa3b4;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 800;
   letter-spacing: 0.12em;
 }
@@ -967,12 +968,12 @@ summary {
 
 .access-options strong {
   color: var(--blue-700);
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .access-options p {
   color: var(--muted);
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.65;
   margin: 16px 0 0;
 }
@@ -1006,7 +1007,7 @@ summary {
   border-left: 2px solid var(--blue-200);
   color: var(--muted);
   counter-increment: route-step;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.5;
   padding: 8px 0 8px 24px;
   position: relative;
@@ -1031,7 +1032,7 @@ summary {
 
 .airport-panel > p {
   color: var(--muted);
-  font-size: 12px;
+  font-size: 14px;
   margin: 20px 0 0;
 }
 
@@ -1096,7 +1097,7 @@ summary {
 
 .program-day header span {
   color: #a8cae3;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 800;
   letter-spacing: 0.13em;
 }
@@ -1127,13 +1128,13 @@ td {
 
 th {
   color: var(--muted);
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
 td {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .contact-section {
@@ -1221,7 +1222,7 @@ td {
 .links-grid > a > span,
 .links-grid > div > span:first-child {
   color: var(--blue-700);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 800;
   grid-column: 1;
   letter-spacing: 0.13em;
@@ -1258,36 +1259,51 @@ td {
   background: var(--navy-950);
   color: #8ea4b7;
   display: grid;
-  gap: 45px;
-  grid-template-columns: 1fr 1fr;
+  gap: 34px 52px;
+  grid-template-columns: minmax(0, 1.35fr) minmax(230px, 0.65fr);
   padding: 42px max(44px, calc((100% - var(--content-width)) / 2 + 44px));
 }
 
-.site-footer > div {
+.site-footer > div,
+.footer-contact {
   display: flex;
   flex-direction: column;
   gap: 7px;
 }
 
-.site-footer > div:last-child {
-  align-items: flex-end;
-  text-align: right;
+.footer-contact {
+  font-style: normal;
+}
+
+.footer-contact > span {
+  color: #91c8ea;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.footer-note {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  grid-column: 1 / -1;
+  padding-top: 18px;
 }
 
 .site-footer strong {
   color: white;
   font-family: var(--serif);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
 }
 
 .site-footer span {
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .site-footer a {
   color: #b9dcf3;
-  font-size: 13px;
+  font-size: 17px;
+  font-weight: 650;
   text-decoration: none;
 }
 
@@ -1298,7 +1314,7 @@ td {
 
 .site-footer small {
   color: #6f879a;
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.5;
 }
 

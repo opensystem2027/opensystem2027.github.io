@@ -102,10 +102,6 @@ export async function WorkshopPage({
               <h1>{workshop.heroTitle}</h1>
               <p className="hero-summary">{workshop.summary}</p>
               <div className="hero-actions">
-                <a className="button button-primary" href="#home-overview">
-                  Workshop overview
-                  <span aria-hidden="true">↓</span>
-                </a>
                 <a className="button button-outline" href="#home-registration">
                   Registration — Coming Soon
                 </a>

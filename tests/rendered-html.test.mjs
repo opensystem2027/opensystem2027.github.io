@@ -14,6 +14,7 @@ test("builds the complete multi-page workshop site", async () => {
   assert.match(page, /activePage === "links"/);
   assert.match(page, /To be announced/);
   assert.match(page, /Registration will open soon\./);
+  assert.doesNotMatch(page, /Workshop overview/);
   assert.match(page, /title="Links"/);
   assert.match(page, />Contact</);
   assert.match(page, /\{contact\.name\}/);

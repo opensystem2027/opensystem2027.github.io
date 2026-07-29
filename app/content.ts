@@ -17,7 +17,7 @@ export const workshop = {
   language: "English",
   expectedParticipants: "Approximately 50",
   summary:
-    "The GKLS equation, formulated fifty years ago, established the standard framework for the Markovian dynamics of open quantum systems. This workshop will discuss further developments in open quantum systems, with a focus on non-Markovian dynamics and related developments in the GKLS framework. Related topics include GKLS dynamics, quantum many-body physics, and quantum information.",
+    "The GKLS equation, formulated fifty years ago, established the standard framework for the Markovian dynamics of open quantum systems. This workshop will discuss further developments in open quantum systems, with a focus on non-Markovian dynamics and related developments in the GKLS framework. Related topics include the application of the GKLS equation and information aspects of quantum many-body physics.",
 };
 
 export const topics = [
@@ -25,6 +25,7 @@ export const topics = [
   "GKLS equation",
   "Quantum information and correlations",
   "Quantum thermodynamics",
+  "Quantum many-body physics",
   "Experimental approaches to open quantum systems",
 ];
 

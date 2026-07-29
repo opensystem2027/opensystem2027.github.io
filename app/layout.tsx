@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { headers } from "next/headers";
 import "./globals.css";
 
-const title = "International Workshop on the GKLS equation and beyond";
+const title = "International Workshop on the GKLS Equation and Beyond";
 const description =
   "A focused international workshop on non-Markovian quantum dynamics, open quantum systems, quantum information, statistical physics, and related fields, held at RIKEN Wako Campus.";
 
@@ -22,13 +22,13 @@ export async function generateMetadata(): Promise<Metadata> {
       title,
       description,
       type: "website",
-      siteName: "International Workshop on Non-Markovian Quantum Dynamics",
+      siteName: title,
       images: [
         {
           url: `${origin}/og.png`,
           width: 1536,
           height: 1024,
-          alt: `${title} — 7–8 March 2027 (tentative), RIKEN Wako Campus`,
+          alt: `${title} — 8–9 March 2027 (tentative), RIKEN Wako Campus`,
         },
       ],
     },

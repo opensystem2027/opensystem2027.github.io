@@ -6,7 +6,7 @@ import { useRef } from "react";
 export default function MobileMenu({
   items,
 }: {
-  items: readonly (readonly [string, string, string])[];
+  items: readonly (readonly [string, string])[];
 }) {
   const detailsRef = useRef<HTMLDetailsElement>(null);
 
@@ -14,7 +14,7 @@ export default function MobileMenu({
     <details ref={detailsRef}>
       <summary>Menu</summary>
       <nav aria-label="Mobile navigation">
-        {items.map(([, label, href]) => (
+        {items.map(([label, href]) => (
           <Link
             href={href}
             key={href}

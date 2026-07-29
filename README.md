@@ -1,8 +1,8 @@
-# International Workshop on the GKLS equation and beyond
+# International Workshop on the GKLS Equation and Beyond
 
 Source code for the official workshop website.
 
-- Workshop dates: 7–8 March 2027 (tentative)
+- Workshop dates: 8–9 March 2027 (tentative)
 - Venue: RIKEN Wako Campus, Saitama, Japan
 - Pages: Home, Venue, Program, Contact, and Links
 - Current site: https://gkls-equation-workshop.riken-quantu-3457.chatgpt.site/

@@ -8,14 +8,18 @@ test("builds the complete multi-page workshop site", async () => {
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
   ]);
 
-  assert.match(layout, /International Workshop on the GKLS equation and beyond/);
+  assert.match(layout, /International Workshop on the GKLS Equation and Beyond/);
   assert.match(page, /activePage === "venue"/);
   assert.match(page, /activePage === "program"/);
   assert.match(page, /activePage === "links"/);
   assert.match(page, /To be announced/);
   assert.match(page, /Registration will open soon\./);
+  assert.match(page, /title="Links"/);
   assert.match(page, /Information is subject to\s+change\./);
-  assert.doesNotMatch(page, /Pre-publication preview|DAY 01|DAY 02/);
+  assert.doesNotMatch(
+    page,
+    /Pre-publication preview|DAY 01|DAY 02|Useful information|Participation|Scope/,
+  );
   assert.doesNotMatch(page + layout, /codex-preview|react-loading-skeleton/i);
   await access(new URL("../dist/server/index.js", import.meta.url));
   await Promise.all(
@@ -35,6 +39,7 @@ test("keeps unconfirmed information explicit and editable", async () => {
   assert.match(content, /export const programDays: ProgramDay\[\] = \[\]/);
   assert.match(content, /export const registrationUrl = ""/);
   assert.match(content, /registrationDeadline: "TBA"/);
+  assert.match(content, /date: "8–9 March 2027 \(tentative\)"/);
   assert.match(content, /export const venueLinks = \{/);
   assert.match(content, /google\.com\/maps\/search/);
   assert.match(content, /riken\.jp\/en\/access\/wako-map/);

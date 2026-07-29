@@ -9,10 +9,10 @@ import MobileMenu from "./MobileMenu";
 import { getSiteContent } from "./site-data";
 
 const navigation = [
-  ["01", "Home", "/"],
-  ["02", "Venue", "/venue"],
-  ["03", "Program", "/program"],
-  ["04", "Links", "/links"],
+  ["Home", "/"],
+  ["Venue", "/venue"],
+  ["Program", "/program"],
+  ["Links", "/links"],
 ] as const;
 
 export type WorkshopPageName =
@@ -26,22 +26,14 @@ function StatusMark({ children }: { children: React.ReactNode }) {
 }
 
 function SectionTitle({
-  index,
-  label,
   title,
   description,
 }: {
-  index: string;
-  label: string;
   title: string;
   description?: string;
 }) {
   return (
     <header className="section-title">
-      <p>
-        <span>{index}</span>
-        {label}
-      </p>
       <h2>{title}</h2>
       {description ? <div>{description}</div> : null}
     </header>
@@ -70,13 +62,12 @@ export async function WorkshopPage({
 
       <aside className="site-rail" aria-label="Workshop navigation">
         <Link className="rail-brand" href="/" aria-label="Workshop home">
-          <strong>International Workshop on the GKLS equation beyond</strong>
+          <strong>{workshop.formalName}</strong>
         </Link>
 
         <nav>
-          {navigation.map(([index, label, href]) => (
+          {navigation.map(([label, href]) => (
             <Link href={href} key={href}>
-              <span>{index}</span>
               {label}
             </Link>
           ))}
@@ -91,7 +82,7 @@ export async function WorkshopPage({
 
       <header className="mobile-header">
         <Link href="/" aria-label="Workshop home">
-          <strong>International Workshop on the GKLS equation beyond</strong>
+          <strong>{workshop.formalName}</strong>
         </Link>
         <MobileMenu items={navigation} />
       </header>
@@ -145,11 +136,7 @@ export async function WorkshopPage({
                 className="home-block registration-block"
                 id="home-registration"
               >
-                <SectionTitle
-                  index="01.1"
-                  label="Participation"
-                  title="Registration & dates"
-                />
+                <SectionTitle title="Registration & dates" />
                 <div className="registration-grid">
                   <article className="registration-card">
                     <p className="mini-label">Registration</p>
@@ -200,7 +187,7 @@ export async function WorkshopPage({
               </section>
 
               <section className="home-block topics-block">
-                <SectionTitle index="01.2" label="Scope" title="Topics" />
+                <SectionTitle title="Topics" />
                 <ol className="topics-grid">
                   {topics.map((topic, index) => (
                     <li key={topic}>
@@ -213,11 +200,7 @@ export async function WorkshopPage({
               </section>
 
               <section className="home-block speakers-block">
-                <SectionTitle
-                  index="01.3"
-                  label="Participants"
-                  title="Invited Speakers"
-                />
+                <SectionTitle title="Invited Speakers" />
                 <ul className="standard-list speaker-list">
                   {invitedSpeakers.length > 0 ? (
                     invitedSpeakers.map((speaker) => (
@@ -236,11 +219,7 @@ export async function WorkshopPage({
               </section>
 
               <section className="home-block location-block">
-                <SectionTitle
-                  index="01.4"
-                  label="Location"
-                  title="RIKEN Wako Campus"
-                />
+                <SectionTitle title="RIKEN Wako Campus" />
                 <div className="location-summary">
                   <address>
                     <strong>{workshop.venueName}</strong>
@@ -259,11 +238,7 @@ export async function WorkshopPage({
               </section>
 
               <section className="home-block organizers-block">
-                <SectionTitle
-                  index="01.5"
-                  label="Committee"
-                  title="Organising committee"
-                />
+                <SectionTitle title="Organising committee" />
                 <ul className="standard-list organizer-list">
                   {organizers.map((organizer, index) => (
                     <li key={`${organizer.name}-${index}`}>
@@ -281,8 +256,6 @@ export async function WorkshopPage({
           {activePage === "venue" ? (
             <section className="major-section venue-section" id="venue">
             <SectionTitle
-              index="02"
-              label="Venue"
               title="Getting to RIKEN Wako Campus"
               description="Public transport is recommended. Wako-shi Station is served by the Tobu Tojo Line and the Tokyo Metro Yurakucho and Fukutoshin lines."
             />
@@ -413,8 +386,6 @@ export async function WorkshopPage({
           {activePage === "program" ? (
             <section className="major-section program-section" id="program">
             <SectionTitle
-              index="03"
-              label="Program"
               title="Workshop schedule"
               description="The detailed scientific program will be published after the speaker schedule has been confirmed."
             />
@@ -462,9 +433,7 @@ export async function WorkshopPage({
           {activePage === "links" ? (
             <section className="major-section links-section" id="links">
             <SectionTitle
-              index="04"
-              label="Links"
-              title="Useful information"
+              title="Links"
               description="Official resources for planning your visit to RIKEN Wako Campus."
             />
             <div className="links-grid">

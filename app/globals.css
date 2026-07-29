@@ -34,6 +34,7 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--sans);
+  font-size: 16px;
   margin: 0;
   text-rendering: optimizeLegibility;
 }
@@ -128,8 +129,8 @@ summary {
   color: #d9e4ed;
   display: grid;
   font-family: var(--serif);
-  font-size: 20px;
-  grid-template-columns: 34px 1fr;
+  font-size: 21px;
+  grid-template-columns: 1fr;
   padding: 17px 3px;
   text-decoration: none;
   transition:
@@ -139,14 +140,6 @@ summary {
 
 .site-rail nav a:first-child {
   border-top: 1px solid rgba(255, 255, 255, 0.09);
-}
-
-.site-rail nav a span {
-  color: #6887a1;
-  font-family: var(--sans);
-  font-size: 8px;
-  font-weight: 800;
-  letter-spacing: 0.12em;
 }
 
 .site-rail nav a:hover,
@@ -164,13 +157,13 @@ summary {
 .rail-meta p {
   color: #d0dee9;
   font-family: var(--serif);
-  font-size: 13px;
+  font-size: 15px;
   margin: 0 0 6px;
 }
 
 .rail-meta span {
   color: #728fa8;
-  font-size: 8px;
+  font-size: 11px;
   font-weight: 750;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -278,7 +271,7 @@ summary {
 .mini-label,
 .section-title > p {
   color: var(--blue-700);
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.17em;
   text-transform: uppercase;
@@ -319,7 +312,7 @@ summary {
   align-items: center;
   border: 1px solid transparent;
   display: inline-flex;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 760;
   gap: 22px;
   justify-content: center;
@@ -406,7 +399,7 @@ summary {
 
 .hero-facts span {
   color: #8bb0cd;
-  font-size: 8px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -414,7 +407,7 @@ summary {
 
 .hero-facts strong {
   font-family: var(--serif);
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 500;
   line-height: 1.35;
 }
@@ -436,19 +429,9 @@ summary {
 
 .section-title {
   display: grid;
-  gap: 24px;
-  grid-template-columns: minmax(160px, 0.45fr) minmax(300px, 1.2fr);
+  gap: 20px;
+  grid-template-columns: minmax(0, 760px);
   margin-bottom: 52px;
-}
-
-.section-title > p {
-  margin: 8px 0 0;
-}
-
-.section-title > p span {
-  color: #9aabb9;
-  display: inline-block;
-  margin-right: 12px;
 }
 
 .section-title h2 {
@@ -456,7 +439,7 @@ summary {
   font-family: var(--serif);
   font-size: clamp(38px, 4.2vw, 58px);
   font-weight: 500;
-  grid-column: 2;
+  grid-column: 1;
   grid-row: 1;
   letter-spacing: -0.04em;
   line-height: 1.05;
@@ -466,7 +449,7 @@ summary {
 .section-title > div {
   color: var(--muted);
   font-size: 14px;
-  grid-column: 2;
+  grid-column: 1;
   line-height: 1.7;
   max-width: 650px;
 }
@@ -533,7 +516,7 @@ summary {
 
 .registration-card small {
   color: var(--muted);
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.55;
   margin-top: auto;
   padding-top: 28px;
@@ -557,13 +540,13 @@ summary {
 
 .dates-card dt {
   color: var(--muted);
-  font-size: 11px;
+  font-size: 13px;
 }
 
 .dates-card dd {
   color: var(--navy-900);
   font-family: var(--serif);
-  font-size: 16px;
+  font-size: 17px;
   margin: 0;
   text-align: right;
 }
@@ -574,7 +557,7 @@ summary {
   color: var(--blue-700);
   display: inline-flex;
   font-family: var(--sans);
-  font-size: 8px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.12em;
   padding: 7px 9px;
@@ -584,7 +567,7 @@ summary {
 .support-note {
   border-left: 3px solid var(--blue-500);
   color: var(--muted);
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.7;
   margin: 22px 0 0;
   padding: 7px 0 7px 18px;
@@ -611,7 +594,7 @@ summary {
 .topics-grid h3 {
   color: var(--navy-800);
   font-family: var(--sans);
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 600;
   line-height: 1.55;
   margin: 0;
@@ -619,7 +602,7 @@ summary {
 
 .related-note {
   color: var(--blue-700);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 750;
   margin: 23px 0 0;
 }
@@ -672,19 +655,19 @@ summary {
 .standard-list strong {
   color: var(--navy-800);
   font-family: var(--serif);
-  font-size: 20px;
+  font-size: 21px;
   font-weight: 500;
 }
 
 .standard-list span {
   color: var(--muted);
-  font-size: 12px;
+  font-size: 14px;
   margin-top: 3px;
 }
 
 .standard-list em {
   color: var(--blue-700);
-  font-size: 11px;
+  font-size: 13px;
   font-style: normal;
   margin-top: 4px;
 }
@@ -721,7 +704,7 @@ summary {
 .location-summary address span,
 .location-summary p {
   color: #adc0d0;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.7;
   margin-top: 8px;
 }
@@ -735,7 +718,7 @@ summary {
   align-items: center;
   color: var(--blue-700);
   display: inline-flex;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 760;
   gap: 13px;
   text-decoration: none;
@@ -801,7 +784,7 @@ summary {
 
 .venue-lead address span {
   color: #a9bfd1;
-  font-size: 11px;
+  font-size: 13px;
   margin-top: 8px;
 }
 
@@ -869,7 +852,7 @@ summary {
 
 .station span {
   color: #91adc4;
-  font-size: 8px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -930,13 +913,13 @@ summary {
 
 .rail-line strong {
   color: var(--navy-800);
-  font-size: 11px;
+  font-size: 13px;
 }
 
 .rail-line p span,
 .rail-line small {
   color: var(--muted);
-  font-size: 9px;
+  font-size: 12px;
   margin-top: 3px;
 }
 
@@ -948,7 +931,7 @@ summary {
 .route-reminder {
   background: var(--blue-100);
   color: var(--navy-800);
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.6;
   margin: 25px 0 0;
   padding: 14px 17px;
@@ -969,7 +952,7 @@ summary {
 
 .access-options article > span {
   color: #8fa3b4;
-  font-size: 8px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.12em;
 }
@@ -984,12 +967,12 @@ summary {
 
 .access-options strong {
   color: var(--blue-700);
-  font-size: 11px;
+  font-size: 13px;
 }
 
 .access-options p {
   color: var(--muted);
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.65;
   margin: 16px 0 0;
 }
@@ -1023,7 +1006,7 @@ summary {
   border-left: 2px solid var(--blue-200);
   color: var(--muted);
   counter-increment: route-step;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.5;
   padding: 8px 0 8px 24px;
   position: relative;
@@ -1048,7 +1031,7 @@ summary {
 
 .airport-panel > p {
   color: var(--muted);
-  font-size: 10px;
+  font-size: 12px;
   margin: 20px 0 0;
 }
 
@@ -1113,7 +1096,7 @@ summary {
 
 .program-day header span {
   color: #a8cae3;
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.13em;
 }
@@ -1144,13 +1127,13 @@ td {
 
 th {
   color: var(--muted);
-  font-size: 8px;
+  font-size: 11px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
 td {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .contact-section {
@@ -1176,7 +1159,7 @@ td {
 
 .contact-card > span:not(.status-mark) {
   color: var(--muted);
-  font-size: 12px;
+  font-size: 14px;
   margin: 9px 0 22px;
 }
 
@@ -1238,7 +1221,7 @@ td {
 .links-grid > a > span,
 .links-grid > div > span:first-child {
   color: var(--blue-700);
-  font-size: 8px;
+  font-size: 11px;
   font-weight: 800;
   grid-column: 1;
   letter-spacing: 0.13em;
@@ -1294,17 +1277,17 @@ td {
 .site-footer strong {
   color: white;
   font-family: var(--serif);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
 }
 
 .site-footer span {
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .site-footer a {
   color: #b9dcf3;
-  font-size: 11px;
+  font-size: 13px;
   text-decoration: none;
 }
 
@@ -1315,7 +1298,7 @@ td {
 
 .site-footer small {
   color: #6f879a;
-  font-size: 9px;
+  font-size: 11px;
   line-height: 1.5;
 }
 
@@ -1380,7 +1363,7 @@ td {
 
   .mobile-header summary {
     cursor: pointer;
-    font-size: 9px;
+    font-size: 11px;
     font-weight: 800;
     letter-spacing: 0.12em;
     list-style: none;

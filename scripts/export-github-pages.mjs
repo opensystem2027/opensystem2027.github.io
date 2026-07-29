@@ -1,4 +1,4 @@
-import { cp, mkdir, rm, writeFile } from "node:fs/promises";
+import { cp, mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 
 const sourceOrigin =
@@ -69,14 +69,22 @@ await waitForServer();
 await rm(outputDirectory, { force: true, recursive: true });
 await mkdir(outputDirectory, { recursive: true });
 
-const cssResponse = await fetch(`${sourceOrigin}/app/globals.css`);
-if (!cssResponse.ok) {
-  throw new Error(`Could not load stylesheet: ${cssResponse.status}`);
+const builtAssetsDirectory = join("dist", "client", "assets");
+const builtCssFiles = (await readdir(builtAssetsDirectory))
+  .filter((fileName) => fileName.endsWith(".css"))
+  .sort();
+if (builtCssFiles.length === 0) {
+  throw new Error("The production build did not contain a stylesheet");
 }
+const builtCss = await Promise.all(
+  builtCssFiles.map((fileName) =>
+    readFile(join(builtAssetsDirectory, fileName), "utf8"),
+  ),
+);
 await mkdir(join(outputDirectory, "assets"), { recursive: true });
 await writeFile(
   join(outputDirectory, "assets", "styles.css"),
-  await cssResponse.text(),
+  builtCss.join("\n"),
 );
 
 for (const route of routes) {

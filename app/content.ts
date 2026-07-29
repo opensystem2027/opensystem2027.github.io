@@ -130,6 +130,11 @@ export const organizers: Organizer[] = [
     affiliation: "Riken",
     role: "Organizer",
   },
+  {
+    name: "Tomotaka Kuwahara",
+    affiliation: "Riken",
+    role: "Organizer",
+  },
 ];
 
 export const contact = {

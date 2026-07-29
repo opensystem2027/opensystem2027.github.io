@@ -40,7 +40,7 @@ jobs:
 
       - name: Create the GitHub Pages files
         env:
-          PAGES_PUBLIC_ORIGIN: https://hiroki-nakaba.github.io/opensystem
+          PAGES_PUBLIC_ORIGIN: https://opensystem2027.github.io
           STATIC_SOURCE_ORIGIN: http://localhost:4310
         run: npm run export:pages
 

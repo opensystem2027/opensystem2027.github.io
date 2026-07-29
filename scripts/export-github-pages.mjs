@@ -5,7 +5,7 @@ const sourceOrigin =
   process.env.STATIC_SOURCE_ORIGIN ?? "http://localhost:4310";
 const publicOrigin =
   process.env.PAGES_PUBLIC_ORIGIN ??
-  "https://hiroki-nakaba.github.io/opensystem";
+  "https://opensystem2027.github.io";
 const outputDirectory = "pages-dist";
 const routes = ["/", "/venue", "/program", "/links"];
 

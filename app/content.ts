@@ -23,8 +23,8 @@ export const workshop = {
 export const topics = [
   "Non-Markovian dynamics of open quantum systems",
   "GKLS equation",
+  "Non-Markovian dynamics of classical systems",
   "Quantum information and correlations",
-  "Quantum thermodynamics",
   "Quantum many-body physics",
   "Experimental approaches to open quantum systems",
 ];

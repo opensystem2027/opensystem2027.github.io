@@ -8,7 +8,7 @@
 export const workshop = {
   formalName: "International Workshop on the GKLS Equation and Beyond",
   heroTitle: "International Workshop on the GKLS Equation and Beyond",
-  date: "8–9 March 2027 (tentative)",
+  date: "8–10 March 2027 (tentative)",
   registrationDeadline: "TBA",
   venueShort: "RIKEN Wako Campus, Saitama, Japan",
   venueName: "RIKEN Wako Campus",

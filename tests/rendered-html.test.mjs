@@ -43,7 +43,7 @@ test("keeps unconfirmed information explicit and editable", async () => {
   assert.match(content, /export const programDays: ProgramDay\[\] = \[\]/);
   assert.match(content, /export const registrationUrl = ""/);
   assert.match(content, /registrationDeadline: "TBA"/);
-  assert.match(content, /date: "8–9 March 2027 \(tentative\)"/);
+  assert.match(content, /date: "8–10 March 2027 \(tentative\)"/);
   assert.match(content, /export const venueLinks = \{/);
   assert.match(content, /google\.com\/maps\/search/);
   assert.match(content, /riken\.jp\/en\/access\/wako-map/);

@@ -2,7 +2,7 @@
 
 Source code for the official workshop website.
 
-- Workshop dates: 8–10 March 2027 (tentative)
+- Workshop dates: 8–10 March 2027
 - Venue: RIKEN Wako Campus, Saitama, Japan
 - Pages: Home, Venue, Program, Contact, and Links
 - Current site: https://gkls-equation-workshop.riken-quantu-3457.chatgpt.site/

@@ -8,7 +8,7 @@
 export const workshop = {
   formalName: "International Workshop on the GKLS Equation and Beyond",
   heroTitle: "International Workshop on the GKLS Equation and Beyond",
-  date: "8–10 March 2027 (tentative)",
+  date: "8–10 March 2027",
   registrationDeadline: "TBA",
   venueShort: "RIKEN Wako Campus, Saitama, Japan",
   venueName: "RIKEN Wako Campus",
@@ -41,7 +41,28 @@ export type Speaker = {
  * { name: "Full Name", affiliation: "University", photo: "/speakers/name.jpg",
  *   talkTitle: "Title of the talk" }
  */
-export const invitedSpeakers: Speaker[] = [];
+export const invitedSpeakers: Speaker[] = [
+  {
+    name: "Dariusz Chruściński",
+    affiliation: "Nicolaus Copernicus University",
+  },
+  {
+    name: "Neill Lambert",
+    affiliation: "RIKEN",
+  },
+  {
+    name: "Kavan Modi",
+    affiliation: "Singapore University of Technology and Design",
+  },
+  {
+    name: "Takashi Mori",
+    affiliation: "Keio University",
+  },
+  {
+    name: "Chikako Uchiyama",
+    affiliation: "University of Yamanashi",
+  },
+];
 
 export type ProgramItem = {
   time: string;

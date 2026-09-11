@@ -39,11 +39,36 @@ test("keeps unconfirmed information explicit and editable", async () => {
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
   ]);
 
-  assert.match(content, /export const invitedSpeakers: Speaker\[\] = \[\]/);
+  const speakersBySurname = [
+    "Dariusz Chruściński",
+    "Neill Lambert",
+    "Kavan Modi",
+    "Takashi Mori",
+    "Chikako Uchiyama",
+  ];
+  for (const speaker of speakersBySurname) {
+    assert.match(content, new RegExp(speaker));
+  }
+  assert.deepEqual(
+    speakersBySurname.map((speaker) => content.indexOf(speaker)),
+    speakersBySurname.map((speaker) => content.indexOf(speaker)).toSorted(
+      (left, right) => left - right,
+    ),
+  );
+  for (const affiliation of [
+    "Nicolaus Copernicus University",
+    "Singapore University of Technology and Design",
+    "RIKEN",
+    "Keio University",
+    "University of Yamanashi",
+  ]) {
+    assert.match(content, new RegExp(affiliation));
+  }
   assert.match(content, /export const programDays: ProgramDay\[\] = \[\]/);
   assert.match(content, /export const registrationUrl = ""/);
   assert.match(content, /registrationDeadline: "TBA"/);
-  assert.match(content, /date: "8–10 March 2027 \(tentative\)"/);
+  assert.match(content, /date: "8–10 March 2027"/);
+  assert.doesNotMatch(content, /tentative/i);
   assert.match(content, /export const venueLinks = \{/);
   assert.match(content, /google\.com\/maps\/search/);
   assert.match(content, /riken\.jp\/en\/access\/wako-map/);

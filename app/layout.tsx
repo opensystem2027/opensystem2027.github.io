@@ -28,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
           url: `${origin}/og.png`,
           width: 1536,
           height: 1024,
-          alt: `${title} — 8–10 March 2027 (tentative), RIKEN Wako Campus`,
+          alt: `${title} — 8–10 March 2027, RIKEN Wako Campus`,
         },
       ],
     },

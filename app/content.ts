@@ -47,6 +47,10 @@ export const invitedSpeakers: Speaker[] = [
     affiliation: "Nicolaus Copernicus University",
   },
   {
+    name: "Naomichi Hatano",
+    affiliation: "The University of Tokyo",
+  },
+  {
     name: "Neill Lambert",
     affiliation: "RIKEN",
   },

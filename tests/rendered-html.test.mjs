@@ -42,6 +42,7 @@ test("keeps unconfirmed information explicit and editable", async () => {
   const speakersBySurname = [
     "Dariusz Chruściński",
     "Naomichi Hatano",
+    "Gen Kimura",
     "Neill Lambert",
     "Kavan Modi",
     "Takashi Mori",
@@ -59,6 +60,7 @@ test("keeps unconfirmed information explicit and editable", async () => {
   for (const affiliation of [
     "Nicolaus Copernicus University",
     "The University of Tokyo",
+    "Tohoku University",
     "Singapore University of Technology and Design",
     "RIKEN",
     "Keio University",

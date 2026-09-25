@@ -51,6 +51,10 @@ export const invitedSpeakers: Speaker[] = [
     affiliation: "The University of Tokyo",
   },
   {
+    name: "Gen Kimura",
+    affiliation: "Tohoku University",
+  },
+  {
     name: "Neill Lambert",
     affiliation: "RIKEN",
   },

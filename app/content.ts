@@ -47,6 +47,10 @@ export const invitedSpeakers: Speaker[] = [
     affiliation: "Nicolaus Copernicus University",
   },
   {
+    name: "Ryusuke Hamazaki",
+    affiliation: "RIKEN",
+  },
+  {
     name: "Naomichi Hatano",
     affiliation: "The University of Tokyo",
   },
@@ -65,6 +69,10 @@ export const invitedSpeakers: Speaker[] = [
   {
     name: "Takashi Mori",
     affiliation: "Keio University",
+  },
+  {
+    name: "Andrea Smirne",
+    affiliation: "University of Milan",
   },
   {
     name: "Chikako Uchiyama",

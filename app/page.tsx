@@ -174,10 +174,6 @@ export async function WorkshopPage({
                         </StatusMark>
                       </dd>
                     </div>
-                    <div>
-                      <dt>Travel support</dt>
-                      <dd>Details to be announced</dd>
-                    </div>
                   </dl>
                 </div>
               </section>
@@ -219,12 +215,11 @@ export async function WorkshopPage({
                 <div className="location-summary">
                   <address>
                     <strong>{workshop.venueName}</strong>
+                    <span>{workshop.venueRoom}</span>
                     <span>{workshop.venueAddress}</span>
                   </address>
                   <p>
-                    The meeting room and on-campus directions will be announced
-                    later. Complete travel information is provided in the Venue
-                    section.
+                    Complete travel information is provided in the Venue section.
                   </p>
                   <Link className="text-link" href="/venue">
                     View venue and travel information
@@ -260,6 +255,7 @@ export async function WorkshopPage({
               <address>
                 <p className="mini-label">Workshop venue</p>
                 <strong>{workshop.venueName}</strong>
+                <span>{workshop.venueRoom}</span>
                 <span>{workshop.venueAddress}</span>
               </address>
               <a
@@ -504,3 +500,4 @@ export async function WorkshopPage({
 export default function Home() {
   return <WorkshopPage activePage="home" />;
 }
+

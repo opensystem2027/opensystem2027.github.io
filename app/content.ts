@@ -12,6 +12,7 @@ export const workshop = {
   registrationDeadline: "TBA",
   venueShort: "RIKEN Wako Campus, Saitama, Japan",
   venueName: "RIKEN Wako Campus",
+  venueRoom: "Large Conference Room, 2F, Administrative Headquarters (C00)",
   venueAddress: "2-1 Hirosawa, Wako, Saitama 351-0198, Japan",
   format: "In person",
   language: "English",
@@ -23,9 +24,7 @@ export const workshop = {
 export const topics = [
   "Non-Markovian dynamics of open quantum systems",
   "GKLS equation",
-  "Non-Markovian dynamics of classical systems",
   "Quantum information and correlations",
-  "Quantum many-body physics",
   "Experimental approaches to open quantum systems",
 ];
 
@@ -180,3 +179,4 @@ export const contact = {
   affiliation: "The University of Tokyo and RIKEN",
   email: "nakaba@iis.u-tokyo.ac.jp",
 };
+

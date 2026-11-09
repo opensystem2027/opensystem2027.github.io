@@ -269,11 +269,11 @@ export async function WorkshopPage({
               </a>
               <a
                 className="button button-outline"
-                href={venueLinks.officialHomepage}
+                href={venueLinks.officialAccess}
                 rel="noreferrer"
                 target="_blank"
               >
-                RIKEN official website
+                Access to Administrative Headquarters (C00)
                 <span aria-hidden="true">↗</span>
               </a>
             </div>

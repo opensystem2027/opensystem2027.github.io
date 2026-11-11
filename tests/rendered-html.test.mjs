@@ -68,7 +68,9 @@ test("keeps unconfirmed information explicit and editable", async () => {
   ]) {
     assert.match(content, new RegExp(affiliation));
   }
-  assert.match(content, /export const programDays: ProgramDay\[\] = \[\]/);
+  assert.match(content, /export const programDays: ProgramDay\[\] = \[/);
+  assert.match(page, /title="Tentative program"/);
+  assert.match(page, /Japan Standard Time/);
   assert.match(content, /export const registrationUrl = ""/);
   assert.match(content, /registrationDeadline: "TBA"/);
   assert.match(content, /date: "8–10 March 2027"/);

@@ -378,8 +378,8 @@ export async function WorkshopPage({
           {activePage === "program" ? (
             <section className="major-section program-section" id="program">
             <SectionTitle
-              title="Workshop schedule"
-              description="The detailed scientific program will be published after the speaker schedule has been confirmed."
+              title="Tentative program"
+              description="Tentative schedule for 8–10 March 2027. All times are Japan Standard Time (JST, UTC+9). The program is subject to change."
             />
             {programDays.length > 0 ? (
               <div className="program-days">
@@ -390,21 +390,17 @@ export async function WorkshopPage({
                       <h3>{day.date}</h3>
                     </header>
                     <div className="table-wrap">
-                      <table>
+                      <table className="program-table">
                         <thead>
                           <tr>
                             <th scope="col">Time</th>
-                            <th scope="col">Type</th>
-                            <th scope="col">Speaker</th>
-                            <th scope="col">Title</th>
+                            <th scope="col">Session</th>
                           </tr>
                         </thead>
                         <tbody>
                           {day.items.map((item) => (
                             <tr key={`${item.time}-${item.title}`}>
                               <td>{item.time}</td>
-                              <td>{item.type}</td>
-                              <td>{item.speaker ?? "—"}</td>
                               <td>{item.title}</td>
                             </tr>
                           ))}
@@ -500,4 +496,3 @@ export async function WorkshopPage({
 export default function Home() {
   return <WorkshopPage activePage="home" />;
 }
-

@@ -1137,6 +1137,34 @@ td {
   font-size: 16px;
 }
 
+.program-table {
+  min-width: 0;
+}
+
+.program-table th:first-child,
+.program-table td:first-child {
+  white-space: nowrap;
+  width: 1%;
+}
+
+@media (max-width: 600px) {
+  .program-day > header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    padding: 18px 16px;
+  }
+
+  .program-table th,
+  .program-table td {
+    padding: 14px 12px;
+  }
+
+  .program-table td {
+    font-size: 14px;
+  }
+}
+
 .contact-section {
   min-height: 570px;
 }

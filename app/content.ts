@@ -92,8 +92,202 @@ export type ProgramDay = {
   items: ProgramItem[];
 };
 
-/* Add one object per day when the schedule is ready. */
-export const programDays: ProgramDay[] = [];
+/* Provisional schedule. Update sessions as the program is confirmed. */
+export const programDays: ProgramDay[] = [
+  {
+    "date": "Monday, 8 March 2027",
+    "label": "Day 1",
+    "items": [
+      {
+        "time": "9:30–9:40",
+        "type": "Other",
+        "title": "Opening"
+      },
+      {
+        "time": "9:40–10:40",
+        "type": "Talk",
+        "title": "Invited talk (60 min)"
+      },
+      {
+        "time": "10:40–11:10",
+        "type": "Break",
+        "title": "Coffee break"
+      },
+      {
+        "time": "11:10–11:50",
+        "type": "Talk",
+        "title": "Invited talk (40 min)"
+      },
+      {
+        "time": "11:50–12:30",
+        "type": "Talk",
+        "title": "Invited talk (40 min)"
+      },
+      {
+        "time": "12:30–14:00",
+        "type": "Break",
+        "title": "Lunch"
+      },
+      {
+        "time": "14:00–14:25",
+        "type": "Talk",
+        "title": "Contributed talk"
+      },
+      {
+        "time": "14:25–14:50",
+        "type": "Talk",
+        "title": "Contributed talk"
+      },
+      {
+        "time": "14:50–15:15",
+        "type": "Talk",
+        "title": "Contributed talk"
+      },
+      {
+        "time": "15:15–15:45",
+        "type": "Break",
+        "title": "Coffee break"
+      },
+      {
+        "time": "15:45–17:45",
+        "type": "Poster session",
+        "title": "Poster session"
+      },
+      {
+        "time": "18:00–",
+        "type": "Other",
+        "title": "Banquet / reception"
+      }
+    ]
+  },
+  {
+    "date": "Tuesday, 9 March 2027",
+    "label": "Day 2",
+    "items": [
+      {
+        "time": "9:30–10:30",
+        "type": "Talk",
+        "title": "Invited talk (60 min)"
+      },
+      {
+        "time": "10:30–11:00",
+        "type": "Break",
+        "title": "Coffee break"
+      },
+      {
+        "time": "11:00–11:40",
+        "type": "Talk",
+        "title": "Invited talk (40 min)"
+      },
+      {
+        "time": "11:40–12:20",
+        "type": "Talk",
+        "title": "Invited talk (40 min)"
+      },
+      {
+        "time": "12:20–13:50",
+        "type": "Break",
+        "title": "Lunch"
+      },
+      {
+        "time": "13:50–14:15",
+        "type": "Talk",
+        "title": "Contributed talk"
+      },
+      {
+        "time": "14:15–14:40",
+        "type": "Talk",
+        "title": "Contributed talk"
+      },
+      {
+        "time": "14:40–15:05",
+        "type": "Talk",
+        "title": "Contributed talk"
+      },
+      {
+        "time": "15:05–15:35",
+        "type": "Break",
+        "title": "Coffee break"
+      },
+      {
+        "time": "15:35–16:00",
+        "type": "Talk",
+        "title": "Contributed talk"
+      },
+      {
+        "time": "16:00–16:25",
+        "type": "Talk",
+        "title": "Contributed talk"
+      },
+      {
+        "time": "16:25–17:15",
+        "type": "Other",
+        "title": "Discussion / reserve session"
+      }
+    ]
+  },
+  {
+    "date": "Wednesday, 10 March 2027",
+    "label": "Day 3",
+    "items": [
+      {
+        "time": "9:30–10:30",
+        "type": "Talk",
+        "title": "Invited talk (60 min)"
+      },
+      {
+        "time": "10:30–11:00",
+        "type": "Break",
+        "title": "Coffee break"
+      },
+      {
+        "time": "11:00–11:40",
+        "type": "Talk",
+        "title": "Invited talk (40 min)"
+      },
+      {
+        "time": "11:40–12:20",
+        "type": "Talk",
+        "title": "Invited talk (40 min)"
+      },
+      {
+        "time": "12:20–13:50",
+        "type": "Break",
+        "title": "Lunch"
+      },
+      {
+        "time": "13:50–14:15",
+        "type": "Talk",
+        "title": "Contributed talk"
+      },
+      {
+        "time": "14:15–14:40",
+        "type": "Talk",
+        "title": "Contributed talk"
+      },
+      {
+        "time": "14:40–15:10",
+        "type": "Break",
+        "title": "Coffee break"
+      },
+      {
+        "time": "15:10–15:35",
+        "type": "Talk",
+        "title": "Contributed talk"
+      },
+      {
+        "time": "15:35–16:15",
+        "type": "Other",
+        "title": "General discussion"
+      },
+      {
+        "time": "16:15–16:25",
+        "type": "Other",
+        "title": "Closing"
+      }
+    ]
+  }
+];
 
 /*
  * Add the external registration form URL when registration opens.
@@ -179,4 +373,3 @@ export const contact = {
   affiliation: "The University of Tokyo and RIKEN",
   email: "nakaba@iis.u-tokyo.ac.jp",
 };
-

@@ -18,7 +18,7 @@ test("builds the complete multi-page workshop site", async () => {
   assert.match(page, /title="Links"/);
   assert.match(page, />Contact</);
   assert.match(page, /\{contact\.name\}/);
-  assert.match(page, /Information is subject to\s+change\./);
+  assert.doesNotMatch(page, /This website is currently being updated/);
   assert.doesNotMatch(page, /© 2027 Workshop Organizers/);
   assert.doesNotMatch(
     page,
@@ -70,9 +70,10 @@ test("keeps unconfirmed information explicit and editable", async () => {
   }
   assert.match(content, /export const programDays: ProgramDay\[\] = \[/);
   assert.match(page, /title="Tentative program"/);
-  assert.match(page, /Japan Standard Time/);
+  assert.doesNotMatch(page, /Tentative schedule for|Japan Standard Time/);
   assert.match(content, /export const registrationUrl = "https:\/\/docs\.google\.com\/forms\//);
-  assert.match(content, /registrationDeadline: "TBA"/);
+  assert.match(content, /registrationDeadline: "31 January 2027"/);
+  assert.match(content, /abstractDeadline: "15 January 2027"/);
   assert.match(content, /date: "8–10 March 2027"/);
   assert.doesNotMatch(content, /tentative/i);
   assert.match(content, /export const venueLinks = \{/);

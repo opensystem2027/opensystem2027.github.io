@@ -103,7 +103,7 @@ export async function WorkshopPage({
               <p className="hero-summary">{workshop.summary}</p>
               <div className="hero-actions">
                 <a className="button button-outline" href="#home-registration">
-                  Registration — Coming Soon
+                  {registrationUrl ? "Register now" : "Registration — Coming Soon"}
                 </a>
               </div>
             </div>
@@ -136,7 +136,7 @@ export async function WorkshopPage({
                 <div className="registration-grid">
                   <article className="registration-card">
                     <p className="mini-label">Registration</p>
-                    <h3>Registration will open soon.</h3>
+                    <h3>{registrationUrl ? "Registration is now open." : "Registration will open soon."}</h3>
                     {registrationUrl ? (
                       <a
                         className="button button-primary"
@@ -461,11 +461,19 @@ export async function WorkshopPage({
                 <strong>RIKEN visitor entry procedures</strong>
                 <i aria-hidden="true">↗</i>
               </a>
-              <div className="link-disabled" aria-disabled="true">
-                <span>Registration</span>
-                <strong>Workshop registration form</strong>
-                <StatusMark>TBA</StatusMark>
-              </div>
+              {registrationUrl ? (
+                <a href={registrationUrl} rel="noreferrer" target="_blank">
+                  <span>Registration</span>
+                  <strong>Workshop registration form</strong>
+                  <i aria-hidden="true">↗</i>
+                </a>
+              ) : (
+                <div className="link-disabled" aria-disabled="true">
+                  <span>Registration</span>
+                  <strong>Workshop registration form</strong>
+                  <StatusMark>TBA</StatusMark>
+                </div>
+              )}
             </div>
             </section>
           ) : null}

@@ -293,7 +293,7 @@ export const programDays: ProgramDay[] = [
  * Add the external registration form URL when registration opens.
  * Leave empty while registration is closed.
  */
-export const registrationUrl = "";
+export const registrationUrl = "https://docs.google.com/forms/d/e/1FAIpQLScNNFD8xRKGMTDHMZ2zorpgZ0UW8vpz4KyQXCklsHh6DfZelw/viewform";
 
 export const venueLinks = {
   officialHomepage: "https://www.riken.jp/en/",

@@ -71,7 +71,7 @@ test("keeps unconfirmed information explicit and editable", async () => {
   assert.match(content, /export const programDays: ProgramDay\[\] = \[/);
   assert.match(page, /title="Tentative program"/);
   assert.match(page, /Japan Standard Time/);
-  assert.match(content, /export const registrationUrl = ""/);
+  assert.match(content, /export const registrationUrl = "https:\/\/docs\.google\.com\/forms\//);
   assert.match(content, /registrationDeadline: "TBA"/);
   assert.match(content, /date: "8–10 March 2027"/);
   assert.doesNotMatch(content, /tentative/i);

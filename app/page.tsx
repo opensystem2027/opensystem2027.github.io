@@ -76,7 +76,6 @@ export async function WorkshopPage({
         <div className="rail-meta">
           <p>{workshop.date}</p>
           <p>RIKEN Wako Campus</p>
-          <span>English · In person</span>
         </div>
       </aside>
 
@@ -116,14 +115,6 @@ export async function WorkshopPage({
               <div>
                 <span>Location</span>
                 <strong>{workshop.venueShort}</strong>
-              </div>
-              <div>
-                <span>Format</span>
-                <strong>{workshop.format}</strong>
-              </div>
-              <div>
-                <span>Language</span>
-                <strong>{workshop.language}</strong>
               </div>
             </div>
 
@@ -168,11 +159,11 @@ export async function WorkshopPage({
                     </div>
                     <div>
                       <dt>Registration deadline</dt>
-                      <dd>
-                        <StatusMark>
-                          {workshop.registrationDeadline}
-                        </StatusMark>
-                      </dd>
+                      <dd>{workshop.registrationDeadline}</dd>
+                    </div>
+                    <div>
+                      <dt>Abstract submission deadline</dt>
+                      <dd>{workshop.abstractDeadline}</dd>
                     </div>
                   </dl>
                 </div>
@@ -218,9 +209,6 @@ export async function WorkshopPage({
                     <span>{workshop.venueRoom}</span>
                     <span>{workshop.venueAddress}</span>
                   </address>
-                  <p>
-                    Complete travel information is provided in the Venue section.
-                  </p>
                   <Link className="text-link" href="/venue">
                     View venue and travel information
                     <span aria-hidden="true">→</span>
@@ -367,10 +355,6 @@ export async function WorkshopPage({
                   </article>
                 ))}
               </div>
-              <p>
-                Route times are indicative. Please check current timetables
-                before travel.
-              </p>
             </section>
             </section>
           ) : null}
@@ -379,7 +363,7 @@ export async function WorkshopPage({
             <section className="major-section program-section" id="program">
             <SectionTitle
               title="Tentative program"
-              description="Tentative schedule for 8–10 March 2027. All times are Japan Standard Time (JST, UTC+9). The program is subject to change."
+              description="The program is subject to change."
             />
             {programDays.length > 0 ? (
               <div className="program-days">
@@ -489,12 +473,6 @@ export async function WorkshopPage({
             <strong>{contact.name}</strong>
             <a href={`mailto:${contact.email}`}>{contact.email}</a>
           </address>
-          <div className="footer-note">
-            <small>
-              This website is currently being updated. Information is subject to
-              change.
-            </small>
-          </div>
         </footer>
       </div>
     </>

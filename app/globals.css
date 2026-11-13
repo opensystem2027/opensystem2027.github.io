@@ -376,7 +376,7 @@ summary {
   background: var(--navy-900);
   color: white;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   margin: 0 auto;
   max-width: var(--content-width);
   padding: 0 44px;
